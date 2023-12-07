@@ -39,49 +39,42 @@ This project demonstrates a Kubernetes deployment using Minikube and `kubectl`. 
 
 Start Minikube cluster:
 
-bash
 ```
 minikube start
 ```
 
 Apply MongoDB secret:
 
-bash
 ```
 kubectl apply -f mongo-secret.yaml
 ```
 
 Deploy MongoDB:
 
-bash
 ```
 kubectl apply -f mongodb-deployment.yaml
 ```
 
 Deploy the web app:
 
-bash
 ```
 kubectl apply -f webapp/deployment.yaml
 ```
 
 Expose the web app service:
 
-bash
 ```
 kubectl apply -f webapp/service.yaml
 ```
 
 Apply Ingress for external access:
 
-bash
 ```
 kubectl apply -f webapp/ingress.yaml
 ```
 
 Apply Egress for external connectivity (if needed):
 
-bash
 ```
 kubectl apply -f webapp/egress.yaml
 ```
@@ -89,7 +82,6 @@ kubectl apply -f webapp/egress.yaml
 
 Build the Docker image for the web app:
 
-bash
 ```
 cd webapp
 docker build -t webapp-image:v1 .
@@ -98,7 +90,6 @@ docker build -t webapp-image:v1 .
 Cleaning Up
 To clean up resources:
 
-bash
 ```
 kubectl delete -f mongo-secret.yaml
 kubectl delete -f mongodb-deployment.yaml
